@@ -1,0 +1,128 @@
+nav.navbar {
+  background-color: #050000;
+  height: 6vh;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
+    color: #cca56d;
+    text-transform: uppercase;
+	  font-weight: 700;
+}
+
+.navbar-nav {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#header-intro {
+  background-image: url('../img/1/wedding.jpg');
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+}
+
+#counter {
+  height: 14vh;
+}
+
+.counter-number {
+  font-size: 3rem;
+  color: #4e4e4e;
+}
+
+.counter-title {
+  font-weight: 500;
+	color: #8a8a8a;
+	font-style: italic;
+}
+
+#carousel {
+  height: 80vh;
+  overflow: hidden;
+}
+
+#carousel img {
+/*  filter: blur(5px);
+*/}
+
+.carousel-indicators li {
+  background-color: #666;
+}
+
+.carousel-indicators .active {
+  background-color: #000;
+}
+
+#carousel-overlay{
+  position: absolute;
+  height: 80vh;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#carousel-overlay img{
+  height: 50vh;
+  margin-left: 37%;
+  margin-top: 13vh;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.large-stylish {
+  font-size: 10rem;
+  line-height: 10rem;
+  padding: 3rem;
+  font-weight: 100;
+	color: #f9d7cd;
+}
+
+.cursive-golden {
+  font-size: 3rem;
+	font-weight: 100;
+	color: #955755;
+	font-style: italic;
+}
+
+.sub-cursive-golden {
+  font-weight: 500;
+  color: #969696;
+  font-style: italic;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-light-gray {
+  background-color: #ececec;
+}
+
+.gray-uppercase {
+  text-transform: uppercase;
+	font-weight: 500;
+	color: #4e4e4e;
+	letter-spacing: .1rem;
+	font-size: 1.2rem;
+  font-style: italic;
+}
+
+.profile-intro .gray-uppercase {
+  color: black;
+}
+
+.profile-intro-detail {
+  font-weight: 100;
+  font-style: normal;
+  color: #484848;
+}
+
+#events {
+
+}
+
+#map {
+  height: 50vh;
+}
