@@ -1,39 +1,53 @@
+body {
+  background-color: #f9fafc;
+}
+
 nav.navbar {
-  background-color: #050000;
-  height: 6vh;
+  background-color: #ffffff;
+  height: 10vh;
 }
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
-    color: #cca56d;
-    text-transform: uppercase;
-	  font-weight: 700;
+  color: #676767;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: .75rem;
+	letter-spacing: 2px;
 }
 
 .navbar-nav {
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 #header-intro {
-  background-image: url('../img/1/wedding.jpg');
-  height: 80vh;
+  background-image: url('../img/1/weddingtext.jpg');
+  height: 90vh;
   background-position: center;
   background-size: cover;
 }
 
 #counter {
-  height: 14vh;
+  padding: 5rem 0;
+  border-bottom: 1px solid #eaebed;
 }
 
 .counter-number {
-  font-size: 3rem;
-  color: #4e4e4e;
+  font-size: 5rem;
+  color: #353535;
+  font-weight: 100;
+  font-family: 'Arial';
 }
 
 .counter-title {
   font-weight: 500;
 	color: #8a8a8a;
 	font-style: italic;
+}
+
+.counter-col{
+  border-radius: 20px;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
 }
 
 #carousel {
@@ -120,7 +134,7 @@ nav.navbar {
 }
 
 #events {
-
+  background-color: #fff;
 }
 
 #map {
