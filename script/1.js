@@ -65,9 +65,34 @@ initializeClock(weddingDate);
 
 //  Google Maps
 let map;
+let locations = [
+      ['<h4>Reception</h4>', 30.713395, 76.723157, 4],
+      ['<h4>Wedding</h4>', 30.726611, 76.766981, 3],
+      ['<h4>Cocktail</h4>', 30.753973, 76.788808, 2],
+      ['<h4>Mehandi</h4>', 30.747709, 76.797620, 1]
+    ];
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 30.726705, lng: 76.767135},
-    zoom: 13
+    center: {lat: 30.7348705, lng: 76.766135},
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
 }

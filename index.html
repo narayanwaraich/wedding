@@ -9,6 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/1.css">
+
+    <link rel="stylesheet" href="style/photoswipe.css">
+    <link rel="stylesheet" href="img/1/default-skin/default-skin.css">
+
   </head>
   <body>
 
@@ -84,15 +88,15 @@
 
     <div id="events" class="pt-5">
       <div class="container">
-        <h2 class="text-center cursive-golden mb-4">When & Where</h2>
+        <h2 class="text-center cursive-golden mb-5">When & Where</h2>
         <div class="row">
           <div class="col-6 mb-4">
             <div class="card text-center">
               <img class="card-img-top" src="img/1/mehndi.jpg" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title gray-uppercase">Mehandi</h4>
-                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h6 class="card-subtitle mb-2 text-muted">Sunday, 14 February, 2016 - 10:00 AM -St. Peter Park, Kuta, Bali</h6>
+<!--                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+-->                <h6 class="card-subtitle mb-2 address">Sunday, 14 February, 2016 - 10:00 AM - Sector 10, Chandigarh</h6>
               </div>
             </div>
           </div>
@@ -101,8 +105,8 @@
               <img class="card-img-top" src="img/1/cocktail.jpg" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title gray-uppercase">Cocktail</h4>
-                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h6 class="card-subtitle mb-2 text-muted">Address</h6>
+<!--                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+-->                <h6 class="card-subtitle mb-2 address">Sunday, 14 February, 2016 - 8:00 PM - Hotel Mountview, Sector 10, Chandigarh</h6>
               </div>
             </div>
           </div>
@@ -111,8 +115,8 @@
               <img class="card-img-top" src="img/1/wedding.jpg" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title gray-uppercase">Wedding</h4>
-                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h6 class="card-subtitle mb-2 text-muted">Address</h6>
+<!--                <p class="card-text sub-cursive-golden">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+-->                <h6 class="card-subtitle mb-2 address">Sunday, 15 February, 2016 - 11:00 AM - JW Marriott, Sector 35, Chandigarh</h6>
               </div>
             </div>
           </div>
@@ -121,8 +125,8 @@
               <img class="card-img-top" src="img/1/reception.jpg" alt="Card image cap">
               <div class="card-body">
                 <h4 class="card-title gray-uppercase">Reception</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <h6 class="card-subtitle mb-2 text-muted">Address</h6>
+<!--                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+-->                <h6 class="card-subtitle mb-2 address">Sunday, 16 February, 2016 - 9:00 PM - Phase 3B-2, Mohali</h6>
               </div>
             </div>
           </div>
@@ -185,11 +189,127 @@
       </div>
     </div>
 
+<!-- Gallery with thumbnails -->
+<div id="wedding-gallery">
+  <div class="container">
+    <div class="my-gallery justify-content-around" itemscope itemtype="http://schema.org/ImageGallery">
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/1.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/1.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/2.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/2.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/3.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/3.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/4.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/4.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/5.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/5.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="img/1/gallery/6.jpg" itemprop="contentUrl" data-size="2048x1367">
+              <img src="img/1/gallery/6.jpg" itemprop="thumbnail" alt="Image description" />
+          </a>
+          <figcaption itemprop="caption description">Image caption</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+
+
+<!-- DOM Entry for Image Gallery -->
+
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader--active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <script src="bootstrap/jquery-3.2.1.slim.min.js"></script>
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="script/1.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFT0lzOIciBgTcSjthtBSayFV3fBhg53g&callback=initMap" type="text/javascript"></script>
+    <script src="script/photoswipe.min.js"></script>
+    <script src="script/photoswipe-ui-default.min.js"></script>
+    <script src="script/imageGallery.js"></script>
   </body>
 </html>
