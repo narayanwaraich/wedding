@@ -234,5 +234,56 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     }
 };
 
+var albumData = undefined;
+
+let populateLinks = function(obj){
+  let links = ["all"];
+  let linksHTML = '';
+  for (let prop in obj) {
+      if(!obj.hasOwnProperty(prop)) continue;
+      if(obj[prop].length) {
+          links.push(prop);
+      }
+  }
+  for (let i = 0; i < links.length; i++) {
+    linksHTML = linksHTML + "<a href='#' class='btn btn-large' id='" + links[i] + "-album'>" + links[i] + "</a>" ;
+  }
+  document.getElementById('album-links').innerHTML = linksHTML;
+}
+
+let populateAlbum = function(obj, category, count){
+  /*
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="img/1/gallery/1.jpg" itemprop="contentUrl" data-size="2048x1367">
+          <img src="img/1/gallery/1.jpg" itemprop="thumbnail" alt="Image description" />
+      </a>
+      <figcaption itemprop="caption description">Image caption</figcaption>
+  </figure>
+  */
+  let albumHTML = "";
+  for (let prop in obj) {
+    if(!obj.hasOwnProperty(prop)) continue;
+    if(obj[prop].length) {
+      if (category === 'all') {
+        for (var i = 0; i < obj[prop].length; i++) {
+          albumHTML = albumHTML + "<figure itemprop='associatedMedia' itemscope itemtype='http:\/\/schema.org\/ImageObject'><a href='" + obj[prop][i]['path'] + "' itemprop='contentUrl' data-size='" + obj[prop][i]['width'] + "x" + obj[prop][i]['height'] + "'><img src='" + obj[prop][i]['path'] + "' itemprop='thumbnail' alt='Image description' /></a></figure>";
+        }
+      } else {
+        if (prop === category) {
+
+        }
+      }
+    }
+  }
+  document.getElementById('wedding-album-images').innerHTML = albumHTML;
+}
+
+$.ajax({url: "scrape.php"}).done(function( data ) {
+    albumData = JSON.parse(data);
+    populateLinks(albumData);
+    populateAlbum(albumData, 'all', 6);
+//    console.log(JSON.parse(data));
+});
+
 // execute above function
 initPhotoSwipeFromDOM('.my-gallery');
