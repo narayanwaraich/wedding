@@ -152,9 +152,11 @@ nav.navbar {
 }
 
 #wedding-gallery .my-gallery {
+/*
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+*/
 }
 
 #wedding-gallery .my-gallery img {
@@ -162,11 +164,25 @@ nav.navbar {
   height: auto;
 }
 
-#wedding-gallery .my-gallery figure {
+#wedding-gallery .my-gallery div {
+/*
   display: block;
   flex: 0 0 30%;
+*/
+background-color: #f6f7f9;
 }
 
 #wedding-gallery .my-gallery figcaption {
   display: none;
+}
+
+.btn-album {
+  display: inline-block;
+	background-color: #ffffff;
+	margin: 2rem auto;
+  box-shadow: 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
+}
+
+.card-columns .card {
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
 }

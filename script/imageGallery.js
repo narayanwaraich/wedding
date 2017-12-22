@@ -235,6 +235,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 var albumData = undefined;
+var showCount = undefined;
+var albumCategory = undefined;
 
 let populateLinks = function(obj){
   let links = ["all"];
@@ -249,41 +251,58 @@ let populateLinks = function(obj){
     linksHTML = linksHTML + "<a href='#' class='btn btn-large' id='" + links[i] + "-album'>" + links[i] + "</a>" ;
   }
   document.getElementById('album-links').innerHTML = linksHTML;
+  $( "#album-links a" ).on( "click", function(e) {
+    e.preventDefault();
+    albumCategory = this.id.substring(0,this.id.indexOf('-album'));
+    populateAlbum(albumData, albumCategory, 6);
+    //console.log();
+  });
+
 }
 
 let populateAlbum = function(obj, category, count){
-  /*
-  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-      <a href="img/1/gallery/1.jpg" itemprop="contentUrl" data-size="2048x1367">
-          <img src="img/1/gallery/1.jpg" itemprop="thumbnail" alt="Image description" />
-      </a>
-      <figcaption itemprop="caption description">Image caption</figcaption>
-  </figure>
-  */
-  let albumHTML = "";
+  showCount = count;
+  var albumHTML = "";
   for (let prop in obj) {
     if(!obj.hasOwnProperty(prop)) continue;
     if(obj[prop].length) {
+      var picsToShow = undefined;
+      if (count < obj[prop].length) {
+        picsToShow = count;
+      } else {
+        picsToShow = obj[prop].length;
+      }
+      console.log(picsToShow, category);
       if (category === 'all') {
-        for (var i = 0; i < obj[prop].length; i++) {
-          albumHTML = albumHTML + "<figure itemprop='associatedMedia' itemscope itemtype='http:\/\/schema.org\/ImageObject'><a href='" + obj[prop][i]['path'] + "' itemprop='contentUrl' data-size='" + obj[prop][i]['width'] + "x" + obj[prop][i]['height'] + "'><img src='" + obj[prop][i]['path'] + "' itemprop='thumbnail' alt='Image description' /></a></figure>";
+        for (var i = 0; i < picsToShow; i++) {
+          albumHTML = albumHTML + "<figure class='card' itemprop='associatedMedia' itemscope itemtype='http:\/\/schema.org\/ImageObject'><a href='" + obj[prop][i]['path'] + "' itemprop='contentUrl' data-size='" + obj[prop][i]['width'] + "x" + obj[prop][i]['height'] + "'><img src='" + obj[prop][i]['path'] + "' itemprop='thumbnail' alt='Image description' /></a></figure>";
         }
       } else {
         if (prop === category) {
-
+          for (var i = 0; i < picsToShow; i++) {
+            albumHTML = albumHTML + "<figure class='card' itemprop='associatedMedia' itemscope itemtype='http:\/\/schema.org\/ImageObject'><a href='" + obj[prop][i]['path'] + "' itemprop='contentUrl' data-size='" + obj[prop][i]['width'] + "x" + obj[prop][i]['height'] + "'><img src='" + obj[prop][i]['path'] + "' itemprop='thumbnail' alt='Image description' /></a></figure>";
+          }
         }
       }
+
     }
   }
   document.getElementById('wedding-album-images').innerHTML = albumHTML;
+  initPhotoSwipeFromDOM('.my-gallery');
 }
 
 $.ajax({url: "scrape.php"}).done(function( data ) {
     albumData = JSON.parse(data);
     populateLinks(albumData);
+    albumCategory = 'all';
     populateAlbum(albumData, 'all', 6);
-//    console.log(JSON.parse(data));
+});
+
+
+$( "#view-more" ).on( "click", function(e) {
+  e.preventDefault();
+  populateAlbum(albumData, albumCategory, (showCount+6));
 });
 
 // execute above function
-initPhotoSwipeFromDOM('.my-gallery');
+// initPhotoSwipeFromDOM('.my-gallery');
