@@ -187,6 +187,17 @@ background-color: #f6f7f9;
   box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1);
 }
 
+footer {
+  padding: 1rem;
+	font-size: .7rem;
+	color: #8e8e8e;
+	border-top: 1px solid #e0e0e0;
+}
+
+footer p{
+    margin: 0;
+}
+
 @media (max-width: 767px) {
 
   .counter-number {
