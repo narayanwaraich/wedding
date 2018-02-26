@@ -3,7 +3,7 @@ const helper = {
   googleMapsAPIKey: 'AIzaSyBFT0lzOIciBgTcSjthtBSayFV3fBhg53g'
 }
 
-const weddingDate = new Date('2018-02-15');
+const weddingDate = new Date('2018-05-8');
 
 function getFormattedDate(date) {
 //  console.log(arguments.length);
