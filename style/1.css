@@ -207,14 +207,19 @@ background-color: #f6f7f9;
 
 #album-links a {
   text-transform: uppercase;
-  border-bottom: 1px solid #c9c9c9;
-  padding-bottom: .25rem;
+  border-bottom: 2px solid #ee1f24;
+  padding-bottom: 1rem;
   line-height: 1;
   transition: all 150ms ease-in-out;
+  color: #ee1f24;
+  font-weight: 700;
+  margin: 0 20px;
+  border-radius: 0;
+  letter-spacing: 3px;
 }
 
 #album-links a:hover {
-  border-bottom-color: #a0a1a4;
+  border-bottom-color: #ee1c24;
 }
 
 .btn-album {
